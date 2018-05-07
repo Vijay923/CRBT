@@ -5,7 +5,7 @@ use LWP::UserAgent;
 #use HTTP::Request::Common;
 $request=POST "http://192.169.2.3/CheckBalance/WebForm1.aspx?msisdn=123";
 print "$request\n";
-=pod
+#=cut
 print "$PROGRAM_NAME\n";
 print "$PROCESS_ID\n";
 print "$proceesid\n";
@@ -13,7 +13,7 @@ print "$0\n";
 print "$1\n";
 
 system("ls");
-
+hahaha
 print "sript start here\n";
 $a=23;
 print "$a\n";
