@@ -1,6 +1,12 @@
 package Fuck;
 print "package loaded successfully\n";
 
+use Exporter;
+@ISA = qw(Exporter);
+
+@EXPORT = qw($fuck);
+
+my $fuck = "FUckedlikeanything"; 
 sub new
 {
 	goto &fuck;
