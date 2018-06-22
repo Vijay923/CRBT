@@ -10,6 +10,8 @@ our @ISA = qw(Exporter);
 our @EXPORT = qw($fuck);
 our $fuck = "FUckedlikeanything"; 
 
+local $SIG{__DIE__} = sub {warn @_; exit 1};
+
 
 $SIG{INT} = \&CleanUp;
 $SIG{TERM} = \&CleanUp;
@@ -37,7 +39,7 @@ sub CleanUp
 		 sleep(10);
 		 exit(1);
 	} elsif ($sig eq "INT") {
-		 print("received INTERRUPT $! . will wait for 10 sec\n");
+		 die "received INTERRUPT $! . will wait for 10 sec\n";
 		 sleep(10);
 		 exit(1);
 	} else {
