@@ -7,4 +7,4 @@ use Fuck;
 #use Fuck qw($fuck);
 
 my $obj=new Fuck;
-print "oh : $obj : $fuck\n";
+print "oh : $obj\n";
