@@ -12,7 +12,13 @@ my $_dbh = {
 
 $SIG{INT} = \&CleanUp;
 $SIG{TERM} = \&CleanUp;
+$SIG{ALRM} = \&CleanUp;
 
+alarm 5;
+my $stdin = <STDIN>;
+# sleep(20);
+system("sleep 20");
+sleep(20);
 #print "$CNF{$_}:$_\n" foreach (keys %CNF); 
 
 sub new { goto &fuck; }
@@ -26,7 +32,7 @@ sub fuck
 		# print "DBI->connect($CNF{dsn},$CNF{user},$CNF{passwd})\n";
 		$_dbh = DBI->connect($CNF{dsn},$CNF{user},$CNF{passwd});
 	}
-	 sleep(20);
+	 # sleep(20);
 
 	$self->{'dbh'} = $_dbh;
 	return $self;
